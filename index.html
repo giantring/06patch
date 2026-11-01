@@ -86,6 +86,8 @@
   h1 em{font-style:normal;color:var(--gold)}
   .platforms{color:var(--muted);font-size:17px;margin:0 0 20px;font-weight:500}
   .rings{display:flex;gap:8px;margin:0 0 30px}
+  .rings{align-items:center}
+  .rel-date{margin-left:10px;font-weight:700;font-size:15px;color:#fff;letter-spacing:.02em;text-shadow:0 2px 0 rgba(0,20,80,.5)}
   .rings i{width:24px;height:24px;border-radius:50%;border:5px solid var(--gold);display:block;
     box-shadow:0 0 0 1px #8a5e00 inset,0 0 0 1px #8a5e00,0 2px 6px rgba(0,0,0,.3)}
 
@@ -266,7 +268,7 @@
   <div class="eyebrow">SONIC THE HEDGEHOG (2006) · MARATHON RECOMPILED</div>
   <h1>소닉 06<br>마라톤 리컴파일<br><em>한글패치</em></h1>
   <p class="platforms">Windows · macOS · Linux / Steam Deck</p>
-  <div class="rings"><i></i><i></i><i></i></div>
+  <div class="rings"><i></i><i></i><i></i><span class="rel-date" id="relDate">2026/11/01 기준 v1.0.1</span></div>
   <div class="cta">
     <a class="btn primary" id="dlBtn" href="#" rel="noopener">
       ⬇ 한글패치 다운로드 <small id="dlVer">v1.0.1</small>
@@ -316,7 +318,8 @@
       <li><code>Windows</code> 폴더의 <b>소닉06_한글패치_설치.exe</b> 를 더블클릭합니다.</li>
       <li>파란색 <b>"Windows의 PC 보호"</b> 창이 뜨면 <kbd>추가 정보</kbd> → <kbd>실행</kbd> 을 누릅니다. 서명되지 않은 개인 배포 프로그램이라 나오는 안내입니다.</li>
       <li>게임 폴더를 찾으면 <kbd>Enter</kbd> 만 누르면 됩니다. 못 찾으면 <code>MarathonRecomp.exe</code> 가 있는 폴더를 검은 창으로 끌어다 놓고 <kbd>Enter</kbd> 를 누르세요.</li>
-      <li><b>1</b> 을 입력하고 <kbd>Enter</kbd>. 게임 텍스트와 메뉴 한글화가 자동으로 진행됩니다 (수십 초).</li>
+      <li><b>1</b> 을 입력하고 <kbd>Enter</kbd>. 게임 대사 · 자막 · 게임 메뉴 · 상점이 한글로 바뀝니다 (수 초).</li>
+      <li><b>[선택]</b> <b>"메뉴 한글판 exe 도 설치할까요?"</b> 에 <b>y</b> 를 입력하면 옵션 · 종료 창 · 도전 과제까지 한글이 됩니다. 원하지 않으면 그냥 <kbd>Enter</kbd>.</li>
       <li><b>"설치 완료!"</b> 가 나오면 <kbd>Enter</kbd> 로 창을 닫고 게임을 실행합니다.</li>
     </ol>
 <div class="term"><span class="d">────────────────────────────────────────────</span>
@@ -327,8 +330,11 @@
 
 번호를 입력하고 엔터: <span class="y">1</span>
    게임 텍스트 7863줄 적용, 한글 글자 1013자 추가
-   · 메뉴 한글화 완료
+메뉴 한글판 exe 도 설치할까요? [y/N] <span class="y">y</span>
+   · 메뉴 한글화 완료 (원본: MarathonRecomp.exe.orig)
    <span class="g">설치 완료! 게임을 실행하세요.</span></div>
+    <div class="note info"><b>메뉴 한글판 exe 는 특정 빌드 기준입니다</b>
+      <p>Marathon Recompiled 는 정식 릴리스 없이 계속 바뀌고 있어, 메뉴 한글판은 <strong style="color:#fff">v1.0.0 (2026-10-30 빌드 <code>dd91996</code>)</strong> 기준 exe 로 교체됩니다. 다른 시기에 빌드한 버전을 쓰고 있다면 일부 기능이나 설정이 달라질 수 있습니다. 교체 전 설정 파일(키 설정 포함)을 백업하고, 10월 25일 이전 빌드의 키 설정은 새 형식으로 옮겨 둡니다.</p></div>
     <div class="note warn"><b>원본은 자동으로 보관됩니다</b>
       <p>바뀌는 파일의 원본은 같은 폴더에 <code>.orig</code> 로 남습니다 (<code>text.arc.orig</code>, <code>MarathonRecomp.exe.orig</code> 등). 지우지 마세요. 제거할 때 사용합니다.</p></div>
   </div>
@@ -359,8 +365,8 @@
       <li>게임 폴더(<code>~/.local/share/MarathonRecomp</code>, Flatpak 은 <code>~/.var/app/io.github.sonicnext_dev.marathonrecomp/data</code>)를 자동으로 찾습니다. <b>1</b> 을 입력하고 <kbd>Enter</kbd>.</li>
     </ol>
     <h3>일반 Linux (터미널) <span class="mono" style="font-size:12px;color:var(--muted)">x86_64 / ARM64</span></h3>
-<div class="term"><button class="copy">복사</button>cd ~/Downloads/소닉06_한글패치_v1.0.1/Linux
-chmod +x sonic06-korean-patch-x86_64
+    <p style="color:var(--muted);margin:-4px 0 0">압축을 푼 <code>Linux</code> 폴더에서 터미널을 열고 아래처럼 실행합니다.</p>
+<div class="term"><button class="copy">복사</button>chmod +x sonic06-korean-patch-x86_64
 ./sonic06-korean-patch-x86_64</div>
     <p style="color:var(--muted);font-size:14px;margin-top:-6px">ARM64 기기는 <code>sonic06-korean-patch-arm64</code> 를 사용하세요.</p>
     <div class="note warn"><b>macOS · Linux 는 리컴파일 메뉴가 일본어로 남습니다</b>
@@ -393,10 +399,10 @@ chmod +x sonic06-korean-patch-x86_64
   <ol class="steps">
     <li>타이틀 화면 → <b>OPTIONS → 시스템 설정 → 언어</b></li>
     <li>「한국어」 (Windows 메뉴 한글판) 또는 「日本語」 를 고릅니다.</li>
-    <li>음성 언어는 영어 · 일본어 중 자유롭게 고르세요. 자막은 어느 쪽이든 한글로 나옵니다.</li>
+    <li>음성 언어는 <b>일본어</b>를 권장합니다. 영어 음성으로 바꿔도 자막은 한글로 나옵니다.</li>
   </ol>
-  <div class="note"><b>소닉의 영어 대사는 그대로입니다</b>
-    <p>원작 일본판처럼 소닉이 섞어 쓰는 영어(OK!, Piece of cake! 등)는 번역하지 않고 남겨 두었습니다.</p></div>
+  <div class="note info"><b>자막은 일본어 대사 기반입니다 — 일본어 음성을 권장합니다</b>
+    <p>한글 자막은 일본어 대사를 바탕으로 번역했습니다. 대사 내용과 말의 흐름이 자막과 잘 맞도록 음성 언어는 <b>일본어</b>로 플레이하는 것을 권장합니다.</p></div>
 </div></section>
 
 <!-- 07 -->
@@ -404,9 +410,9 @@ chmod +x sonic06-korean-patch-x86_64
   <h2><span class="no">05</span>제거 · 업데이트<span class="en">UNINSTALL / UPDATE</span></h2>
   <div class="tbl"><table>
     <tr><th>하고 싶은 것</th><th>방법</th></tr>
-    <tr><td><b>원래대로 되돌리기</b></td><td>설치 프로그램을 다시 실행하고 <b>2(제거)</b>를 고릅니다. <code>.orig</code> 백업으로 모든 파일이 돌아갑니다. 웹 패처는 <kbd>원래대로 되돌리기</kbd> 버튼을 쓰거나, <code>.orig</code> 파일 이름을 원래대로 바꿉니다.</td></tr>
+    <tr><td><b>원래대로 되돌리기</b></td><td>설치 프로그램을 다시 실행하고 <b>2(제거)</b>를 고릅니다. <code>.orig</code> 백업으로 모든 파일이 돌아가고, 메뉴 한글판을 설치했다면 원래 exe 와 설정 파일(키 설정 포함)도 함께 돌아갑니다. 웹 패처는 <kbd>원래대로 되돌리기</kbd> 버튼을 쓰거나, <code>.orig</code> 파일 이름을 원래대로 바꿉니다.</td></tr>
     <tr><td><b>새 버전 패치 설치</b></td><td>새 설치 프로그램으로 <b>1(설치)</b>을 고르면 됩니다. 항상 <code>.orig</code> 원본에서 새로 만들기 때문에 먼저 제거할 필요가 없습니다.</td></tr>
-    <tr><td><b>Marathon Recompiled<br>업데이트</b></td><td>공식 업데이트로 exe 를 덮어쓰면 리컴파일 메뉴만 원래 언어로 돌아가고, 게임 대사 · 자막 한글은 유지됩니다. 메뉴 한글판은 Marathon Recompiled v1.0.0 기준입니다.</td></tr>
+    <tr><td><b>Marathon Recompiled<br>업데이트</b></td><td>새로 빌드한 exe 로 덮어쓰면 리컴파일 메뉴만 원래 언어로 돌아가고, 게임 대사 · 자막 한글은 유지됩니다. 메뉴 한글판은 Marathon Recompiled v1.0.0 기준입니다.</td></tr>
   </table></div>
 </div></section>
 
@@ -420,9 +426,11 @@ chmod +x sonic06-korean-patch-x86_64
   <details><summary>"[실패]" 또는 "저장 실패" 가 나와요</summary><div class="body"><p>
     게임이 켜져 있거나 다른 프로그램이 파일을 잡고 있는 경우입니다. 게임을 완전히 끄고 다시 실행하세요. 게임 폴더가 <code>Program Files</code> 안에 있다면 설치 프로그램을 우클릭 → <b>관리자 권한으로 실행</b> 하세요.</p></div></details>
   <details><summary>게임은 한글인데 옵션 메뉴는 일본어예요</summary><div class="body"><p>
-    macOS · Linux 이거나 웹 패처로 설치했거나, Marathon Recompiled 를 업데이트한 경우입니다. Windows 에서는 설치 프로그램을 다시 실행하면 메뉴도 한글이 됩니다.</p></div></details>
+    macOS · Linux 이거나, 웹 패처로 설치했거나, 메뉴 한글판 설치를 건너뛰었거나, Marathon Recompiled 를 업데이트한 경우입니다. Windows 에서는 설치 프로그램을 다시 실행해 "메뉴 한글판 exe 도 설치할까요?" 에 <b>y</b> 를 입력하면 메뉴도 한글이 됩니다.</p></div></details>
   <details><summary>자막이 영어로 나와요</summary><div class="body"><p>
     언어가 일본어로 설정되지 않은 상태입니다. <a href="#lang">게임 언어 설정</a>의 방법으로 언어를 「한국어」 또는 「日本語」 로 바꾸세요.</p></div></details>
+  <details><summary>메뉴 한글판 설치 후 키 설정이 바뀌었어요</summary><div class="body"><p>
+    쓰던 Marathon Recompiled 와 메뉴 한글판의 빌드 시기가 달라 설정 이름이 다를 때 생깁니다. 설치 프로그램의 <b>2번(제거)</b>을 실행하면 원래 exe 와 설정이 돌아옵니다. 메뉴 한글판을 계속 쓰려면 옵션의 입력 설정에서 키를 다시 지정하세요.</p></div></details>
   <details><summary>"게임 버전 차이로 N줄은 적용되지 않았습니다" 가 나와요</summary><div class="body"><p>
     가지고 있는 게임 판본의 대사 목록이 조금 달라 생기는 안내입니다. 해당 줄만 원문으로 남고 나머지는 정상 적용됩니다.</p></div></details>
   <details><summary>Windows 에서 경고 창만 뜨고 실행이 안 돼요</summary><div class="body"><p>
@@ -469,6 +477,7 @@ chmod +x sonic06-korean-patch-x86_64
 const CONFIG = {
   download: "https://drive.google.com/file/d/1rRdG5f8W_H6iPr7rj9IlQRq41At0i67m/view?usp=drive_link",
   version: "v1.0.1",
+  date: "2026/11/01",                              // 패치 기준 날짜
   otherPatches: "https://giantring.github.io/",   // 제작자의 다른 한글패치 페이지
   repo: "giantring/06patch"                               // 소스 링크용 GitHub 저장소 (예: "shinju/sonic06-korean-patch")
 };
@@ -490,6 +499,7 @@ const CONFIG = {
   $("#dlBtn").target = "_blank"; $("#dlBtn").rel = "noopener";
   $("#dlVer").textContent = CONFIG.version;
   $("#verPill").textContent = CONFIG.version;
+  $("#relDate").textContent = CONFIG.date + " 기준 " + CONFIG.version;
   $("#srcLink").href = "https://github.com/" + CONFIG.repo;
 
   // OS 탭 + 자동 감지
