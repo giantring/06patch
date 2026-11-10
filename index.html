@@ -165,6 +165,8 @@
   .note p{margin:0;font-size:15px;color:var(--muted)}
   .note.warn{border-left-color:var(--gold)}
   .note.warn>b{color:var(--gold)}
+  .note.danger{border-left-color:#ff4d3d;background:rgba(70,6,12,.55);border-color:rgba(255,90,70,.45)}
+  .note.danger>b{color:#ff8a7a}
   .note.info>b{color:var(--cyan)}
 
   /* ── OS 탭: 메뉴 선택 막대 ── */
@@ -314,7 +316,7 @@
   <div class="eyebrow">SONIC THE HEDGEHOG (2006) · MARATHON RECOMPILED · XENIA · X360 MOBILE</div>
   <h1>소닉 06<br><em>한글패치</em></h1>
   <p class="platforms">Windows · macOS · Linux / Steam Deck · Xenia · Android (X360 Mobile)</p>
-  <div class="rings"><i></i><i></i><i></i><span class="rel-date" id="relDate">2026/11/06 기준<br>일어 기반 v1.3.0 / 영어 기반 v1.0.0</span></div>
+  <div class="rings"><i></i><i></i><i></i><span class="rel-date" id="relDate">2026/11/10 기준<br>일어 기반 v1.3.1 / 영어 기반 v1.0.2</span></div>
   <div class="cta">
     <a class="btn primary" id="dlBtn" href="#download">
       ⬇ 한글패치 다운로드
@@ -354,6 +356,8 @@
 <!-- 02 -->
 <section id="before"><div class="wrap">
   <h2><span class="no">02</span>어떤 패키지를 받을까 · 시작하기 전에<span class="en">BEFORE YOU START</span></h2>
+  <div class="note info"><b>PC 라면 Marathon Recompiled 를 가장 권장합니다</b>
+    <p>에뮬레이터(Xenia · X360 Mobile)에서는 일부 미션 로딩이나 저장 중에 튕기는 사례가 있습니다 (<a href="#install" data-go="xenia">Xenia 안내</a> 참고). Marathon Recompiled 는 에뮬레이터가 아니라 이런 문제가 없고, Windows 에서는 리컴파일 메뉴까지 한글로 나옵니다.</p></div>
   <div class="tbl"><table>
     <tr><th>게임을 실행하는 곳</th><th>받을 패키지</th></tr>
     <tr><td><a href="#install" data-go="win">Marathon Recompiled (Windows)</a></td><td>PC</td></tr>
@@ -404,7 +408,7 @@
       <li><b>"설치 완료!"</b> 가 나오면 <kbd>Enter</kbd> 로 창을 닫고 게임을 실행합니다.</li>
     </ol>
 <div class="term"><span class="d">────────────────────────────────────────────</span>
-   소닉 더 헤지혹 (2006) 한글패치      v1.3.0 일어 기반
+   소닉 더 헤지혹 (2006) 한글패치      v1.3.1 일어 기반
 <span class="d">────────────────────────────────────────────</span>
 게임 폴더: D:\Games\MarathonRecomp\game
    1. 한글패치 설치 (업데이트)    2. 제거    3. 닫기
@@ -458,20 +462,28 @@
   <div class="panel" data-panel="xenia" hidden>
     <h3>Xenia 에뮬레이터 (PC) <span class="mono" style="font-size:12px;color:var(--muted)">ISO · 게임 폴더</span></h3>
     <p style="color:var(--muted);margin:0">Xenia 로 Xbox 360 판을 실행할 때는 <b>PC 패키지의 Windows 설치 프로그램</b>을 씁니다. 게임 자체의 메뉴 · 대사 · 자막 · 상점이 모두 한글이 됩니다.</p>
+    <div class="note danger"><b>⛔ 최우선 경고 — 에뮬레이터에서 「삼총사 전설」 미션 진행 금지</b>
+      <p>신시가지의 「삼총사 전설」 미션(솔레아나의 시련)은 Xenia 기본(Master) 버전 · X360 Mobile 등에서 시련을 불러올 때 게임이 튕기고 세이브가 손상되어 게임이 켜지지 않을 수 있습니다. 스토리 진행에 필요한 미션이 아니니 <b>로시의 제안을 거절</b>하세요. Xenia Canary 버전은 보고가 엇갈려 아직 안전한지 확인되지 않았으니, 진행한다면 시작 전에 꼭 세이브를 백업하세요 (한글패치와는 관계없음).</p></div>
     <ol class="steps">
       <li>설치 프로그램을 실행하고, 게임 <b>ISO 파일</b>(또는 <code>default.xex</code> 가 있는 게임 폴더)을 창에 끌어다 놓은 뒤 <b>1(설치)</b>을 고릅니다.</li>
       <li>ISO 는 그 자리에서 바로 바뀝니다. 원본 데이터는 그대로 두고 바뀐 파일만 ISO 끝에 덧붙이며, 같은 폴더에 <code>ISO이름.iso.korean_undo</code> 가 생깁니다.</li>
       <li>Xenia 설정은 바꿀 필요가 없습니다. 영어 · 일본어 어느 쪽으로 두어도 한글이 나옵니다.</li>
       <li>Xenia 에서 그 ISO 를 열어 실행합니다.</li>
     </ol>
+    <div class="note info"><b>Xenia 는 Canary 버전을 권장합니다</b>
+      <p>기본(Master) 버전보다 호환성이 좋고, 소닉 06 의 저장 · 로딩 중 튕김이 줄어든다는 보고가 있습니다. Xenia Canary 를 받아 같은 방법으로 ISO 를 열면 됩니다.</p></div>
     <div class="note warn"><b>.korean_undo 파일을 지우지 마세요</b>
       <p>2번(제거)을 고르면 이 정보로 ISO 를 패치 전과 완전히 같은 파일로 되돌립니다. ISO 를 다른 프로그램(Xenia 등)이 쓰고 있으면 원본은 그대로 두고 <code>ISO이름_KO.iso</code> 를 새로 만듭니다. GoD(하드 설치형) 덤프는 지원하지 않으니 ISO 나 폴더로 바꿔서 쓰세요.</p></div>
+    <div class="note warn"><b>에뮬레이터에서 마을 수동 저장 주의</b>
+      <p>Xenia · X360 Mobile 같은 에뮬레이터에서 마을에서 메뉴를 열어 직접 저장할 때 게임이 튕겼다는 사례가 있습니다. 튕기면 세이브가 손상될 수 있으니, 중요한 지점 전에는 세이브 폴더(<code>534507D6</code>)를 다른 곳에 복사해 두세요.</p></div>
   </div>
 
   <!-- Android -->
   <div class="panel" data-panel="android" hidden>
     <h3>Android — X360 Mobile</h3>
     <p style="color:var(--muted);margin:0">패키지(zip)는 필요 없습니다. 이 사이트에서 모바일 패처를 열어 휴대폰만으로 패치하며, 인터넷 연결이 필요 없고 파일은 휴대폰 밖으로 전송되지 않습니다.</p>
+    <div class="note danger"><b>⛔ 최우선 경고 — 「삼총사 전설」 미션 진행 금지</b>
+      <p>X360 Mobile 에서는 신시가지의 「삼총사 전설」 미션(솔레아나의 시련)을 진행하지 마세요. 시련을 불러올 때 게임이 튕기고 세이브가 손상되어 게임이 켜지지 않을 수 있습니다. 스토리 진행에 필요한 미션이 아니니 <b>로시의 제안을 거절</b>하세요 (<a href="#install" data-go="xenia">Xenia 안내</a> 참고).</p></div>
     <h3>방법 A — 휴대폰 브라우저로 ISO 패치 (추천)</h3>
     <div class="dl-grid" id="mobilePatchers"></div>
     <ol class="steps">
@@ -488,6 +500,8 @@
     </div>
     <div class="note info"><b>타이틀 ID 534507D6</b>
       <p>모바일 패처는 ISO 의 타이틀 ID 를 확인해 보여 줍니다. 다른 값이 나오면 소닉 06 ISO 가 맞는지 확인하세요. X360 Mobile 이 켜져 있으면 먼저 끄고 패치하세요.</p></div>
+    <div class="note warn"><b>마을 수동 저장 주의</b>
+      <p>X360 Mobile 에서도 마을에서 직접 저장할 때 튕겼다는 사례가 있으니 (<a href="#install" data-go="xenia">Xenia 안내</a> 참고), 중요한 지점 전에는 세이브 폴더(<code>534507D6</code>)를 복사해 두세요.</p></div>
   </div>
 </div></section>
 
@@ -539,6 +553,8 @@
 <!-- 07 -->
 <section id="faq"><div class="wrap">
   <h2><span class="no">07</span>문제 해결<span class="en">TROUBLESHOOTING</span></h2>
+  <details><summary>에뮬레이터에서 「삼총사 전설」 미션을 하다 튕겼어요</summary><div class="body"><p>
+    Xenia 기본 버전 · X360 Mobile 등 에뮬레이터에서 생기는 문제입니다. 세이브가 손상되었을 수 있으니 아래 <a href="#faq-save" onclick="document.getElementById('faq-save').open=true">"저장하거나 구역을 옮기다 튕기고…"</a> 항목대로 확인하세요. 이 미션은 스토리 진행에 필요하지 않으니 다시 진행하지 마세요. Xenia Canary 에서도 안전한지는 확인되지 않았습니다.</p></div></details>
   <details><summary>"게임 폴더를 자동으로 찾지 못했습니다" 가 나와요</summary><div class="body"><p>
     Windows 판은 설치 위치가 정해져 있지 않아 정상입니다. <code>MarathonRecomp.exe</code> 가 있는 폴더를 창으로 끌어다 놓고 <kbd>Enter</kbd> 를 누르세요. 상위 폴더를 놓아도 안쪽까지 찾아봅니다. 설치 프로그램을 <code>MarathonRecomp.exe</code> 와 같은 폴더에 넣고 실행해도 바로 찾습니다.</p></div></details>
   <details><summary>"그 폴더에서 게임 파일을 찾지 못했습니다" 가 나와요</summary><div class="body"><p>
@@ -547,6 +563,8 @@
     게임이나 에뮬레이터가 켜져 있거나 다른 프로그램이 파일을 잡고 있는 경우입니다. 완전히 끄고 다시 실행하세요. 게임 폴더가 <code>Program Files</code> 안에 있다면 설치 프로그램을 우클릭 → <b>관리자 권한으로 실행</b> 하세요.</p></div></details>
   <details><summary>휴대폰에서 _KO.iso 저장이 멈추거나 실패해요</summary><div class="body"><p>
     저장 공간이 게임 크기만큼 남아 있는지 확인하세요. 그래도 안 되면 <a href="#install" data-go="android">Android 방법 C</a>처럼 PC 에서 ISO 를 패치해 옮기세요.</p></div></details>
+  <details id="faq-save"><summary>에뮬레이터에서 저장하거나 구역을 옮기다 튕기고, 그 뒤 게임이 켜지지 않아요</summary><div class="body"><p>
+    Xenia · X360 Mobile 같은 에뮬레이터에서 저장이나 로딩 중에 튕기며 세이브가 손상되는 경우가 있습니다. 세이브 폴더 <code>534507D6</code> 의 이름을 바꾸고(예: <code>534507D6_bak</code>) 실행해 켜지면 세이브 손상입니다. 백업해 둔 세이브로 되돌리거나 새로 시작하세요. 세이브 폴더 위치는 에뮬레이터마다 다르니 데이터 폴더에서 <code>534507D6</code> 을 검색하세요.</p></div></details>
   <details><summary>게임은 한글인데 옵션 메뉴는 원래 언어예요</summary><div class="body"><p>
     macOS · Linux 이거나 웹 패처로 설치했거나, Marathon Recompiled 를 업데이트한 경우입니다. Windows 에서는 설치 프로그램을 다시 실행해 메뉴 한글판을 설치하고, 언어를 「한국어」로 두세요.</p></div></details>
   <details><summary>메뉴 한글판 설치 후 키 설정이 바뀌었어요</summary><div class="body"><p>
@@ -591,19 +609,19 @@
 <script>
 /* ═════════ 설정 ═════════ */
 const CONFIG = {
-  date: "2026/11/06",                              // 패치 기준 날짜
+  date: "2026/11/10",                              // 패치 기준 날짜
   // 패키지 (zip) — url 이 비어 있으면 "링크 준비 중" 으로 표시
   packages: [
-    { name: "PC · 일어 기반",          ver: "v1.3.0", where: "Marathon Recompiled (Windows · macOS · Linux · Steam Deck), PC 의 Xenia", url: "https://drive.google.com/file/d/1TRA9qFBdvj9rLmaTIecRQVgb-hdm_EyH/view?usp=drive_link" },
-    { name: "PC · 영어 기반",          ver: "v1.0.1", where: "Marathon Recompiled (Windows · macOS · Linux · Steam Deck), PC 의 Xenia", url: "https://drive.google.com/file/d/1NJ0TbvO-GSt2OUaOKEugrxu5dvghRwOF/view?usp=drive_link" }
+    { name: "PC · 일어 기반",          ver: "v1.3.1", where: "Marathon Recompiled (Windows · macOS · Linux · Steam Deck), PC 의 Xenia", url: "https://drive.google.com/file/d/1H-Ww21qjIpq8j5rVDPkgiDoegXUqqQfH/view?usp=drive_link" },
+    { name: "PC · 영어 기반",          ver: "v1.0.2", where: "Marathon Recompiled (Windows · macOS · Linux · Steam Deck), PC 의 Xenia", url: "https://drive.google.com/file/d/1-zYWqjKSQ9e9_lAnKypSPjeB9o1V3kUn/view?usp=drive_link" }
   ],
   // 웹 패처 주소. file 이 비어 있으면 "준비 중"
   //   버전을 올릴 때는 파일 이름에 새 버전을 붙여 올리고 여기만 바꾸세요 (브라우저 캐시 때문)
   patchers: [
-    { kind: "pc",     name: "PC 웹 패처 · 일어 기반",  ver: "v1.3.0", file: "https://giantring.github.io/pc-jp/pc-jp-1.3.0.html" },
-    { kind: "pc",     name: "PC 웹 패처 · 영어 기반",  ver: "v1.0.1", file: "https://giantring.github.io/pc-en/pc-en-1.0.1.html" },
-    { kind: "mobile", name: "모바일 패처 · 일어 기반", ver: "v1.3.0", file: "https://giantring.github.io/mobile-jp/mobile-jp-1.3.0.html" },
-    { kind: "mobile", name: "모바일 패처 · 영어 기반", ver: "v1.0.1", file: "https://giantring.github.io/mobile-en/mobile-en-1.0.1.html" }
+    { kind: "pc",     name: "PC 웹 패처 · 일어 기반",  ver: "v1.3.1", file: "https://giantring.github.io/pc-jp/pc-jp-1.3.1.html" },
+    { kind: "pc",     name: "PC 웹 패처 · 영어 기반",  ver: "v1.0.2", file: "https://giantring.github.io/pc-en/pc-en-1.0.2.html" },
+    { kind: "mobile", name: "모바일 패처 · 일어 기반", ver: "v1.3.1", file: "https://giantring.github.io/mobile-jp/mobile-jp-1.3.1.html" },
+    { kind: "mobile", name: "모바일 패처 · 영어 기반", ver: "v1.0.2", file: "https://giantring.github.io/mobile-en/mobile-en-1.0.2.html" }
   ],
   otherPatches: "https://giantring.github.io/",   // 제작자의 다른 한글패치 페이지
   repo: "giantring/06patch"                        // 소스 링크용 GitHub 저장소
